@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeLabelFull = document.getElementById('modeLabelFull');
     const fullModeFields = document.querySelectorAll('.fullModeField');
     const linkForm = document.getElementById('linkForm');
+    const validator = process.env.VALIDATE;
 
     function toggleMode() {
         const isSimplifiedMode = modeLabelFull.innerText === 'Zjednodušený';
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const validation = await fetch(process.env.VALIDATE, {
+            const validation = await fetch(validator, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
