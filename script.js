@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         modeLabelFull.innerText = isSimplifiedMode ? 'Plný' : 'Zjednodušený';
         modeToggle.innerText = isSimplifiedMode ? 'Přepnout na Zjednodušený' : 'Přepnout na Plný';
 
-        // Set default values for full mode
         if (!isSimplifiedMode) {
             document.getElementById('sublection').value = '1';
             document.getElementById('time').value = '-1';
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function formatErroneous(value) {
-        // Convert to float and format to 2 decimal places
         let num = parseFloat(value) || 0;
         return num.toFixed(2);
     }
@@ -49,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open(url, '_blank', 'noopener,noreferrer');
     });
 
-    // Initialize the form and set the correct initial state
     modeLabelFull.innerText = 'Zjednodušený';
     modeToggle.innerText = 'Přepnout na Plný';
     fullModeFields.forEach(field => field.style.display = 'none');
