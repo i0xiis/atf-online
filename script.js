@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeLabelFull = document.getElementById('modeLabelFull');
     const fullModeFields = document.querySelectorAll('.fullModeField');
     const linkForm = document.getElementById('linkForm');
-    const validator = process.env.VALIDATE || '';
+    // Remove the environment variable and use a placeholder URL
+    const validator = '__VALIDATE__';
 
     function toggleMode() {
         const isSimplifiedMode = modeLabelFull.innerText === 'Zjednodušený';
@@ -46,11 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!username || !userId) {
             alert('Please provide both username and user ID.');
-            return;
-        }
-
-        if (!validator) {
-            console.error('Validator URL is not set');
             return;
         }
 
