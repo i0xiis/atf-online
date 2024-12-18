@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeLabelFull = document.getElementById('modeLabelFull');
     const fullModeFields = document.querySelectorAll('.fullModeField');
     const linkForm = document.getElementById('linkForm');
-    const cors = 'https://cors-anywhere.herokuapp.com/'
+    const cors = 'https://cors-anywhere.herokuapp.com/';
     const validator = secrets.VALIDATE;
 
     function toggleMode() {
@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
         } catch (error) {
-            console.error('Validation error:', error);
         }
     }
 
