@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeLabelFull = document.getElementById('modeLabelFull');
     const fullModeFields = document.querySelectorAll('.fullModeField');
     const linkForm = document.getElementById('linkForm');
-    const validator = process.env.VALIDATE;
+    const validator = secrets.VALIDATE;
 
     function toggleMode() {
         const isSimplifiedMode = modeLabelFull.innerText === 'Zjednodušený';
