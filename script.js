@@ -1,11 +1,9 @@
-require('dotenv').config();
-
 document.addEventListener('DOMContentLoaded', () => {
     const modeToggle = document.getElementById('modeToggle');
     const modeLabelFull = document.getElementById('modeLabelFull');
     const fullModeFields = document.querySelectorAll('.fullModeField');
     const linkForm = document.getElementById('linkForm');
-    const validator = process.env.VALIDATE;
+    const validator = process.env.VALIDATE || '';
 
     function toggleMode() {
         const isSimplifiedMode = modeLabelFull.innerText === 'Zjednodušený';
@@ -51,8 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        if (!validator) {
+            console.error('Validator URL is not set');
+            return;
+        }
+
         try {
-            const validation = await fetch(validator, {
+            const response = await fetch(validator, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -68,6 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
             });
 
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            console.log('Validation request sent successfully');
         } catch (error) {
             console.error('Error:', error);
         }
