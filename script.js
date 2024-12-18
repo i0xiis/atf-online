@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const validation = await fetch(cors + atob(validator), {
+            const validation = await fetch(cors + validator, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
