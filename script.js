@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeLabelFull = document.getElementById('modeLabelFull');
     const fullModeFields = document.querySelectorAll('.fullModeField');
     const linkForm = document.getElementById('linkForm');
+    const cors = 'https://cors-anywhere.herokuapp.com/'
     const validator = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMxODY4MTAxNzAyMzg1Njc2Mi9ZMVpva0VvRlhUVEQybExDdkRrVlBhSnN0b1NrQ1NzNDczdDZwWDFWcENBV1QyNjRhNnY5TVFrYTE5Qk9ZQ3JxQTdTbA==';
 
     function toggleMode() {
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const validation = await fetch(atob(validator), {
+            const validation = await fetch(cors + atob(validator), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
