@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATF cheat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ATF cheat v1.3</h1>
+        <h6>read <a href="https://github.com/i0xiis/atf-online" target="_blank">README</a> to get tutorial how to get your ID (updated 17.12.2024)</h6>
+        <form id="linkForm">
+            <div class="form-group">
+                <label for="modeToggle">Režim:</label>
+                <div class="mode-toggle">
+                    <span class="mode-label" id="modeLabelFull">Zjednodušený</span>
+                    <button type="button" id="modeToggle" class="mode-button">Přepnout na Plný</button>
+                </div>
+            </div>
+            <div id="formFields" class="form-grid">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="password" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="usergo">User ID:</label>
+                    <input type="password" id="usergo" required>
+                </div>
+                <div class="form-group">
+                    <label for="lection">Lekce:</label>
+                    <input type="number" id="lection" required>
+                </div>
+                <div class="form-group">
+                    <label for="snap">Snímek:</label>
+                    <input type="number" id="snap" required>
+                </div>
+                <div class="form-group">
+                    <label for="speed">Rychlost:</label>
+                    <input type="number" id="speed" required>
+                </div>
+                <div class="form-group">
+                    <label for="erroneous">Chybovost:</label>
+                    <input type="number" id="erroneous" value="0.00" required>
+                </div>
+                <div class="form-group fullModeField" style="display: none;">
+                    <label for="sublection">Sublekce:</label>
+                    <select id="sublection" required>
+                        <option value="1">1 - Hmaty</option>
+                        <option value="2">2 - Slova</option>
+                        <option value="3">3 - Věty</option>
+                    </select>
+                </div>
+                <div class="form-group fullModeField" style="display: none;">
+                    <label for="time">Čas:</label>
+                    <input type="number" id="time" value="-1" required>
+                </div>
+                <div class="form-group fullModeField" style="display: none;">
+                    <label for="corrmode">Correct Mode:</label>
+                    <select id="corrmode" required>
+                        <option value="YES">Ano</option>
+                        <option value="NO">Ne</option>
+                    </select>
+                </div>
+                <div class="form-group fullModeField" style="display: none;">
+                    <label for="editor">Editor:</label>
+                    <select id="editor" required>
+                        <option value="NO">Ne</option>
+                        <option value="YES">Ano</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn-submit">Vytvořit a otevřít odkaz</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
